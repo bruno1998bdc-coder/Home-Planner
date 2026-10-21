@@ -7,6 +7,10 @@ interface HouseState {
   house: House
 
   selectedRoomId: string | null
+  
+  gridSize: number
+
+  setGridSize: (size: number) => void
 
   addRoom: (
     type: RoomType,
@@ -36,6 +40,14 @@ export const useHouseStore = create<HouseState>((set) => ({
   house: initialHouse,
 
   selectedRoomId: null,
+  
+  gridSize: 0.25,
+
+  setGridSize: (size) => {
+    set({
+      gridSize: size,
+    })
+  },
 
   addRoom: (type, position = { x: 2, y: 2 }) => {
     const id = crypto.randomUUID()

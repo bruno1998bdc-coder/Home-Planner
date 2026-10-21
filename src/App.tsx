@@ -1,3 +1,5 @@
+import "./App.css"
+
 import { FloorCanvas } from "./components/Canvas/FloorCanvas"
 import { RoomPalette } from "./components/Sidebar/RoomPalette"
 
