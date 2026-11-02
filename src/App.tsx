@@ -1,16 +1,37 @@
 import "./App.css"
 
 import { FloorCanvas } from "./components/Canvas/FloorCanvas"
-import { RoomPalette } from "./components/Sidebar/RoomPalette"
+import { PropertiesPanel } from "./components/Sidebar/PropertiesPanel"
+import { useHouseStore } from "./store/houseStore"
 
-export default function App() {
+function App() {
+  const addRoom = useHouseStore((state) => state.addRoom)
+  const roomCount = useHouseStore((state) => state.house.rooms.length)
+
+  function handleAddRoom() {
+    addRoom("bedroom", {
+      x: 2 + roomCount,
+      y: 2 + roomCount,
+    })
+  }
+
   return (
-    <main className="app">
-      <RoomPalette />
+    <div className="app">
+      <main className="workspace">
+        <div className="canvas-toolbar">
+          <button onClick={handleAddRoom}>
+            + Agregar habitación
+          </button>
+        </div>
 
-      <section className="workspace">
         <FloorCanvas />
-      </section>
-    </main>
+      </main>
+
+      <aside className="properties-sidebar">
+        <PropertiesPanel />
+      </aside>
+    </div>
   )
 }
+
+export default App

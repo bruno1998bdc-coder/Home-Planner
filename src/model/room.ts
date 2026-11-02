@@ -3,6 +3,13 @@ export type Point = {
   y: number
 }
 
+export type Vertex = {
+  id: string
+  x: number
+  y: number
+  createdByCut?: boolean
+}
+
 export type RoomType =
   | "bedroom"
   | "bathroom"
@@ -23,6 +30,10 @@ export interface Room {
   height: number
 
   rotation: number
+
+  color: string
+
+  vertices?: Vertex[]
 
   minWidth?: number
   minHeight?: number

@@ -211,3 +211,101 @@
 .grid-size-selector select {
   padding: 4px 8px;
 }
+
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.workspace {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 20px;
+  background: #f1f5f9;
+}
+
+.canvas-toolbar {
+  margin-bottom: 12px;
+}
+
+.canvas-toolbar button {
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.properties-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 20px;
+  background: white;
+  color: #1e293b;
+  border-left: 1px solid #cbd5e1;
+}
+
+.properties-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.properties-panel h3 {
+  margin: 0 0 12px;
+}
+
+.properties-panel label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.properties-panel input,
+.properties-panel select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #1e293b;
+}
+
+.property-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.delete-room {
+  padding: 10px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .properties-sidebar {
+    width: 100%;
+    max-height: 40vh;
+    border-left: none;
+    border-top: 1px solid #cbd5e1;
+  }
+}
+
+.properties-panel input[type="color"] {
+  width: 100%;
+  height: 42px;
+  padding: 4px;
+  cursor: pointer;
+}
